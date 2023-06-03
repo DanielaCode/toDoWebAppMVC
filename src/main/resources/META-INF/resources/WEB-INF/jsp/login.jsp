@@ -4,6 +4,6 @@
     <title>login view with JSP</title>
 </head>
 <body>
-    first login view with JSP
+    Welcome dear ${name}
 </body>
 </html>
