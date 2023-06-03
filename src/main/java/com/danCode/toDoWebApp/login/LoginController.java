@@ -13,7 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
+    private AutenticationService auth;
     private Logger logger = LoggerFactory.getLogger(getClass());
+
+    public LoginController(AutenticationService auth) {
+        this.auth = auth;
+    }
+
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String goToLogin(){
         return "login";
@@ -21,8 +27,16 @@ public class LoginController {
     //we can cash queryParma and form data same way
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public String goToWelcome(@RequestParam String name, String password, ModelMap model){
-        model.put("name",name);
-        return "welcome";
-    }
+        if (auth.authentication(name,password)){
+            model.put("name",name);
+            return "welcome";
+
+        }else{
+            model.put("error","User name or password is not correct");
+            return "login";
+        }
+
+
+     }
 
 }

@@ -10,5 +10,6 @@
 
         <input type="submit">
     </form>
+    <pre>${error}</pre>
 </body>
 </html>
