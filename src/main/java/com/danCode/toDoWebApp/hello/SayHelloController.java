@@ -12,4 +12,20 @@ public class SayHelloController {
     public  String sayHello(){
         return "Hello";
     }
+
+    @RequestMapping("say-hello-html")
+    @ResponseBody
+    public  String sayHelloHtml(){
+        //return strings is not considered efficient so go for stringBuilder or string buffer
+        StringBuffer sb = new StringBuffer();
+        sb.append("<html>");
+        sb.append("<head>");
+        sb.append("<title>My html response</title>");
+        sb.append("</head>");
+        sb.append("<body>");
+        sb.append("my first response with html");
+        sb.append("</body>");
+        sb.append("</html>");
+        return sb.toString();
+    }
 }
