@@ -4,9 +4,6 @@
     <title>Welcome</title>
 </head>
 <body>
-    Welcome dear
-    <form method="post">
-        Welcome Dear!
-    </form>
+    Welcome dear ${name}!
 </body>
 </html>

@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
-    //@RequestMapping("login") this is using to manage GET, POST Request we can see it on inspector that firs response is get when I put de url /login and second is when I entered the user and password and submit the form has post and both return the login view because this method is managing both, so to avoid it we can use:
     @RequestMapping(value = "login", method = RequestMethod.GET)
-    public String login(){
+    public String goToLogin(){
         return "login";
     }
-    //so if a try to do a form submit it will be an error
+    //we can cash queryParma and form data same way
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    public String goToWelcome(@RequestParam String name, String password, ModelMap model){
+        model.put("name",name);
+        return "welcome";
+    }
 
 }
