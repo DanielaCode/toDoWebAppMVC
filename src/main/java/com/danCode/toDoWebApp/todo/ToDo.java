@@ -7,14 +7,14 @@ import java.time.LocalDate;
 
 public class ToDo {
     private int id;
-    private String name;
+    private String userName;
     private LocalDate targetDate;
     private String description;
     private boolean done;
 
-    public ToDo(int id, String name, LocalDate targetDate, String description, boolean done) {
+    public ToDo(int id, String userName, LocalDate targetDate, String description, boolean done) {
         this.id = id;
-        this.name = name;
+        this.userName = userName;
         this.targetDate = targetDate;
         this.description = description;
         this.done = done;
@@ -29,11 +29,11 @@ public class ToDo {
     }
 
     public String getUsername() {
-        return name;
+        return userName;
     }
 
     public void setUsername(String username) {
-        this.name = username;
+        this.userName = username;
     }
 
     public LocalDate getTargetDate() {
@@ -64,7 +64,7 @@ public class ToDo {
     public String toString() {
         return "ToDo{" +
                 "id=" + id +
-                ", username='" + name + '\'' +
+                ", username='" + userName + '\'' +
                 ", targetDate=" + targetDate +
                 ", description='" + description + '\'' +
                 ", done=" + done +
