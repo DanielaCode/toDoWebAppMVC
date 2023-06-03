@@ -1,10 +1,9 @@
 
 <html>
 <head>
-    <title>login view with JSP</title>
+    <title>login</title>
 </head>
 <body>
-    Welcome dear
     <form method="post">
         Name: <input type="text" name="name">
         Password: <input type="password" name="password">
