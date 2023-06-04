@@ -1,5 +1,7 @@
 package com.danCode.toDoWebApp.todo;
 
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 
@@ -9,6 +11,7 @@ public class ToDo {
     private int id;
     private String userName;
     private LocalDate targetDate;
+    @Size(min = 10 , message = "Enter at least 10 characters")
     private String description;
     private boolean done;
 
