@@ -12,7 +12,7 @@ public class ToDoService {
     static {
         todos.add(new ToDo(1,"sofi",LocalDate.now().plusYears(1), "learn Mongo DB",false));
         todos.add(new ToDo(2,"sofi",LocalDate.now().plusYears(1), "learn AI DB",false));
-        todos.add(new ToDo(1,"sofi",LocalDate.now().plusYears(1), "learn more frameworks and architectures",false));
+        todos.add(new ToDo(3,"dani",LocalDate.now().plusYears(1), "learn more frameworks and architectures",false));
     }
 
     public  List<ToDo> findByUsername(String username){

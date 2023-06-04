@@ -5,7 +5,7 @@
 </head>
 <body>
     <div>
-        your to do´s are:
+        hi ${name} your to do´s are:
         ${todos}
     </div>
 </body>
