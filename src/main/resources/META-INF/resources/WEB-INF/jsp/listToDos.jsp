@@ -9,6 +9,7 @@
         <title>todos</title>
     </head>
     <body>
+        <%@ include file="common/navigation.jspf" %>
         <div class="container">
             <h1>Welcome ${name} Your Todos</h1>
             <table class="table">

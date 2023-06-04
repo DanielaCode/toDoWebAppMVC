@@ -8,6 +8,7 @@
     <title>Welcome</title>
 </head>
 <body>
+    <%@ include file="common/navigation.jspf" %>
     <div class="container">
         <h1>Welcome dear ${name}!</h2>
         <a href="list-todos">ToDos</a>
