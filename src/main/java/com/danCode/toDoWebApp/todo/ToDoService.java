@@ -9,13 +9,19 @@ import java.util.List;
 public class ToDoService {
     private static List<ToDo> todos = new ArrayList<>();
 
+    private static int toDosCount=0;
     static {
-        todos.add(new ToDo(1,"sofi",LocalDate.now().plusYears(1), "learn Mongo DB",false));
-        todos.add(new ToDo(2,"sofi",LocalDate.now().plusYears(1), "learn AI DB",false));
-        todos.add(new ToDo(3,"dani",LocalDate.now().plusYears(1), "learn more frameworks and architectures",false));
+        todos.add(new ToDo(++toDosCount,"sofi",LocalDate.now().plusYears(1), "learn Mongo DB",false));
+        todos.add(new ToDo(++toDosCount,"sofi",LocalDate.now().plusYears(1), "learn AI DB",false));
+        todos.add(new ToDo(++toDosCount,"dani",LocalDate.now().plusYears(1), "learn more frameworks and architectures",false));
     }
 
     public  List<ToDo> findByUsername(String username){
         return todos;
     }
+    public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
+        ToDo todo=new ToDo(++toDosCount,username,targetDate,description,done);
+        todos.add(todo);
+    }
+
 }
