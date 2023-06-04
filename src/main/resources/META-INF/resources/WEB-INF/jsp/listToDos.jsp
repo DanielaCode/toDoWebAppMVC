@@ -18,6 +18,8 @@
                         <th>Description</th>
                         <th>Target Date</th>
                         <th>Is Done?</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
