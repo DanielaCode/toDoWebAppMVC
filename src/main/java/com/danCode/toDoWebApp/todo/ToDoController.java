@@ -30,23 +30,23 @@ public class ToDoController {
     @RequestMapping(value = "add-todo", method = RequestMethod.GET)
     public String showNewTodoPage(ModelMap model) {
         String username = (String)model.get("name");
-        ToDo todo = new ToDo(0, username, LocalDate.now().plusYears(1), "j", false);
+        ToDo todo = new ToDo(0, username, LocalDate.now().plusYears(1), "", false);
         model.put("todo", todo);
         return "toDo";
     }
 
     @RequestMapping(value = "add-todo", method = RequestMethod.POST)
-    //public String addNewTodo(@RequestParam String description,ModelMap model){
-        //but what happens if I have a form and I need to catch a lot of parameters i should use a request-param for each, so it is not the best approach so I can bind it directly to ToDo.java
-
     public String addNewTodo(ModelMap model, @Valid ToDo todo, BindingResult result){
         if (result.hasErrors()){
-            return "toDo";
+            return "redirect:add-todo";
         }
-
         todoService.addTodo((String)model.get("name"),todo.getDescription(), LocalDate.now().plusYears(1),false);
+        return "redirect:list-todos";
+    }
 
-        //return "listToDos"; if I let like this whe return to list-todos it will be empty
+    @RequestMapping("delete-todo")
+    public String deleteTodo(@RequestParam int id){
+        todoService.deleteById(id);
         return "redirect:list-todos";
     }
 }
