@@ -16,6 +16,9 @@ public class ToDoService {
         todos.add(new ToDo(++toDosCount,"admin",LocalDate.now().plusYears(1), "learn Mongo DB",false));
         todos.add(new ToDo(++toDosCount,"admin",LocalDate.now().plusYears(1), "learn AI DB",false));
         todos.add(new ToDo(++toDosCount,"admin",LocalDate.now().plusYears(1), "learn more frameworks and architectures",false));
+        todos.add(new ToDo(++toDosCount,"dani",LocalDate.now().plusYears(1), "learn Mongo DB dani",false));
+        todos.add(new ToDo(++toDosCount,"dani",LocalDate.now().plusYears(1), "learn AI DB dani",false));
+        todos.add(new ToDo(++toDosCount,"dani",LocalDate.now().plusYears(1), "learn more frameworks and architectures dani",false));
     }
 
     public  List<ToDo> findByUsername(String username){
