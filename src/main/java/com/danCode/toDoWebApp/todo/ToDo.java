@@ -13,17 +13,20 @@ import java.time.LocalDate;
 //ToDo Bean -> ToDo DataBase TABLE
 //will be mapped if I use @Entity by JPA spb automatic configuration automatocally create tables on h2
 //if I want to map another name to the table I can just @Entity(name=some)
-@Entity(name = "todo")
+@Entity
 public class ToDo {
     @Id
     @GeneratedValue
     private int id;
-    @Column(name = "username") //if want to change column name
     private String userName;
     private LocalDate targetDate;
     @Size(min = 10 , message = "Enter at least 10 characters")
     private String description;
     private boolean done;
+
+    public ToDo() {
+
+    }
 
     public ToDo(int id, String userName, LocalDate targetDate, String description, boolean done) {
         this.id = id;
@@ -41,12 +44,12 @@ public class ToDo {
         this.id = id;
     }
 
-    public String getUsername() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUsername(String username) {
-        this.userName = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public LocalDate getTargetDate() {
@@ -77,7 +80,7 @@ public class ToDo {
     public String toString() {
         return "ToDo{" +
                 "id=" + id +
-                ", username='" + userName + '\'' +
+                ", userName='" + userName + '\'' +
                 ", targetDate=" + targetDate +
                 ", description='" + description + '\'' +
                 ", done=" + done +
