@@ -1,14 +1,24 @@
 package com.danCode.toDoWebApp.todo;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
 
 //this info will be mapped to a Database h2 and mysql but first in a static list
-
+//ToDo Bean -> ToDo DataBase TABLE
+//will be mapped if I use @Entity by JPA spb automatic configuration automatocally create tables on h2
+//if I want to map another name to the table I can just @Entity(name=some)
+@Entity(name = "todo")
 public class ToDo {
+    @Id
+    @GeneratedValue
     private int id;
+    @Column(name = "username") //if want to change column name
     private String userName;
     private LocalDate targetDate;
     @Size(min = 10 , message = "Enter at least 10 characters")
